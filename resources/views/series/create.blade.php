@@ -18,5 +18,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{{ route('series.index') }}" class="btn btn-danger mt-2 mb-2">Voltar</a>
     </form>
 </x-layout>
