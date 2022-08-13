@@ -1,3 +1,22 @@
 <x-layout title="Nova Série">
-    <x-series.form :action="route('series.store')" :nome="old('nome')"/>
+
+    <form action="{{ route('series.store') }}" method="post">
+        @csrf
+        <div class="row mb-3">
+            <div class="form-group col-8">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" autofocus>
+            </div>
+            <div class="form-group col-2">
+                <label for="num_seasons" class="form-label">Nº Temporadas</label>
+                <input type="text" id="num_seasons" name="num_seasons" class="form-control" value="{{ old('num_seasons') }}" autofocus>
+            </div>
+            <div class="form-group col-2">
+                <label for="num_episodes" class="form-label">Eps/Temporada</label>
+                <input type="text" id="num_episodes" name="num_episodes" class="form-control" value="{{ old('num_episodes') }}" autofocus>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
 </x-layout>
