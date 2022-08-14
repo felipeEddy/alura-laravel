@@ -9,6 +9,11 @@ use App\Http\Requests\SeriesFormRequest;
 
 class SeriesController extends Controller
 {
+    public function __construct(private SeriesRepository $repository)
+    {
+        $this->middleware('custom.auth')->except('index');
+    }
+
     public function index()
     {
         $series = Series::query()->orderBy('name')->get();
@@ -25,9 +30,9 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function store(SeriesFormRequest $request, SeriesRepository $repository)
+    public function store(SeriesFormRequest $request)
     {
-        $series = $repository->add($request);
+        $series = $this->repository->add($request);
 
         return to_route('series.index')
             ->with("mensagem.sucesso", "Série '$series->name' adicionada com sucesso");

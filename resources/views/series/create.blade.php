@@ -9,11 +9,11 @@
             </div>
             <div class="form-group col-2">
                 <label for="num_seasons" class="form-label">Nº Temporadas</label>
-                <input type="text" id="num_seasons" name="num_seasons" class="form-control" value="{{ old('num_seasons') }}" autofocus>
+                <input type="text" id="num_seasons" name="num_seasons" class="form-control" value="{{ old('num_seasons') }}">
             </div>
             <div class="form-group col-2">
                 <label for="num_episodes" class="form-label">Eps/Temporada</label>
-                <input type="text" id="num_episodes" name="num_episodes" class="form-control" value="{{ old('num_episodes') }}" autofocus>
+                <input type="text" id="num_episodes" name="num_episodes" class="form-control" value="{{ old('num_episodes') }}">
             </div>
         </div>
 
