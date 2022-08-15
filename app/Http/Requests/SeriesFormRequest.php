@@ -25,6 +25,25 @@ class SeriesFormRequest extends FormRequest
     {
         return [
             'name' => ['required', 'min:3'],
+            'num_seasons' => ['required', 'numeric'],
+            'num_episodes' => ['required', 'numeric'],
+            'cover' => ['image']
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'cover.mimes' => 'O arquivo para a capa deve ser um arquivo de imagem',
+        ];
+    }
+    
+    public function attributes()
+    {
+        return [
+            'name' => 'Nome',
+            'num_seasons' => 'Nº de temporadas',
+            'num_episodes' => 'Nº de episódios',
+        ];    
     }
 }
