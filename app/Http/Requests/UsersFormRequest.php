@@ -29,4 +29,13 @@ class UsersFormRequest extends FormRequest
             'password' => ['required', 'confirmed']
         ];
     }
+    
+    public function attributes()
+    {
+        return [
+            'name' => 'Nome',
+            'email' => 'E-mail',
+            'password' => 'Senha',
+        ];    
+    }
 }
